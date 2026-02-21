@@ -2,7 +2,7 @@
 
 ## Group members
 - Pannawat Rakrodjit
-
+- Amornrat Ngamsompon
 - Khammika Suttichart
 - Siriprapa Sombatkham 
 
