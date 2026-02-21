@@ -4,7 +4,7 @@
 - Pannawat Rakrodjit
 - Amonrat Ngamsompon
 - Khammika Suttichart
-- Siriprapa Sombatkham
+- Siriprapa Sombatkham 
 
 ## Environment
 ```sh
