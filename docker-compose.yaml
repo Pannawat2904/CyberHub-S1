@@ -1,5 +1,5 @@
 services:
-  s1db:
+CyberHub-S1_db:
     image: postgres:latest
     container_name: CyberHub-Database
     ports:
