@@ -1,0 +1,10 @@
+services:
+  s1db:
+    image: postgres:latest
+    container_name: CyberHub-Database
+    ports:
+      - ${DATABASE_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
