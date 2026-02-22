@@ -2,9 +2,9 @@
 
 ## Group members
 - Pannawat Rakrodjit
-- Amonrat Ngamsompon
+- Amornrat Ngamsompon
 - Khammika Suttichart
-- Siriprapa Sombatkham
+- Siriprapa Sombatkham 
 
 ## Environment
 ```sh
