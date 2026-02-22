@@ -24,7 +24,7 @@ services:
         - ${APP_PORT}:1337
       environment: 
         DATABASE_CLIENT: postgres
-        DATABASE_HOST: CyberHub-S1_db
+        DATABASE_HOST: ${DATABASE_HOST}
         DATABASE_PORT: ${DATABASE_PORT}
         DATABASE_NAME: ${DATABASE_NAME}
         DATABASE_USERNAME: ${DATABASE_USER}
