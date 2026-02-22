@@ -23,7 +23,7 @@ services:
       ports:
         - ${APP_PORT}:1337
       environment: 
-        DATABASE_CLIENT: postgres
+        DATABASE_CLIENT: ${DATABASE_CLIENT}
         DATABASE_HOST: ${DATABASE_HOST}
         DATABASE_PORT: ${DATABASE_PORT}
         DATABASE_NAME: ${DATABASE_NAME}
