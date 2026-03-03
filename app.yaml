@@ -9,5 +9,3 @@ services:
       DATABASE_USER: ${DATABASE_USER}
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-    depends_on:
-      - CyberHub-S1_db
