@@ -2,3 +2,15 @@ include:
   - db.yaml
   - admin.yaml
   - app.yaml
+
+services:
+  cyberhub-web:
+    extends:
+      file: app.yaml
+      service: CyberHub-S1_app # ดึงการตั้งค่ามาจากไฟล์ app.yaml
+    networks:
+      - cyberhub-network
+
+networks:
+  cyberhub-network:
+    driver: bridge
