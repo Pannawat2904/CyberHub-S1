@@ -1,0 +1,11 @@
+services: 
+  CyberHub-S1_app:
+    container_name: CyberHub-Application
+    ports:
+      - ${APP_PORT}:80
+    environment:
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
