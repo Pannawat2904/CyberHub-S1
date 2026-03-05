@@ -9,3 +9,5 @@ services:
       DATABASE_USER: ${DATABASE_USER}
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+	networks:	
+		- cyber-network
