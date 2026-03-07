@@ -4,11 +4,11 @@ services:
     ports:
       - ${APP_PORT}:80
     environment:
-	  DATABASE_CLIENT: ${DATABASE_CLIENT}
+    DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_USER: ${DATABASE_USER}
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-	networks:	
+    networks:	
 		- cyberhub-network
