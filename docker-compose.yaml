@@ -1,5 +1,6 @@
 include:
   - db.yaml
+  - admin.yaml
   - app.yaml
 
 services:
