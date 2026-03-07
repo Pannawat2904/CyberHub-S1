@@ -1,0 +1,18 @@
+services:
+  caddy:
+    image: caddy:latest
+    container_name: CyberHub-Caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - cyberhub-network
+```
+
+### 2. สร้างไฟล์ `Caddyfile`
+```
+cyberhub.local {
+    reverse_proxy cyberhub-web:1337
+}

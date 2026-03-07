@@ -2,6 +2,7 @@ include:
   - db.yaml
   - admin.yaml
   - app.yaml
+  - caddy.yaml
 
 services:
   cyberhub-web:
