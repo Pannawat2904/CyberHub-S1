@@ -1,11 +1,9 @@
-# docker-compose.yaml
 include:
   - db.yaml
-  - admin.yaml
   - app.yaml
 
 services:
-  cyberhub-web: # ชื่อ Web Server ตามโจทย์อาจารย์
+  cyberhub-web:
     depends_on:
       - CyberHub-S1_db
     extends:
