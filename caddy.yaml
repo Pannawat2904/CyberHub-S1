@@ -9,5 +9,4 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - cyberhub-network
-```
 

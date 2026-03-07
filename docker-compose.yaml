@@ -4,16 +4,6 @@ include:
   - app.yaml
   - caddy.yaml
 
-services:
-  cyberhub-web:
-    depends_on:
-      - CyberHub-S1_db
-    extends:
-      file: app.yaml
-      service: CyberHub-S1_app
-    networks:
-      - cyberhub-network
-
 networks:
   cyberhub-network:
     driver: bridge
