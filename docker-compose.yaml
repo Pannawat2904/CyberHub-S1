@@ -6,6 +6,8 @@ include:
 
 services:
   cyberhub-web: # ชื่อ Web Server ตามโจทย์อาจารย์
+    depends_on:
+      - CyberHub-S1_db
     extends:
       file: app.yaml
       service: CyberHub-S1_app
