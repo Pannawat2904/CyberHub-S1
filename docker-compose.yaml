@@ -1,13 +1,14 @@
+# docker-compose.yaml
 include:
   - db.yaml
   - admin.yaml
   - app.yaml
 
 services:
-  cyberhub-web:
+  cyberhub-web: # ชื่อ Web Server ตามโจทย์อาจารย์
     extends:
       file: app.yaml
-      service: CyberHub-S1_app # ดึงการตั้งค่ามาจากไฟล์ app.yaml
+      service: CyberHub-S1_app
     networks:
       - cyberhub-network
 
