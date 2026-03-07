@@ -1,0 +1,3 @@
+cyberhub-s1.local {
+    reverse_proxy CyberHub-App:1337
+}

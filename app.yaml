@@ -1,11 +1,16 @@
 services: 
   CyberHub-S1_app:
-    container_name: CyberHub-Application
+    image: prawee/strapi:latest
+    container_name: CyberHub-App
     ports:
-      - ${APP_PORT}:80
+      - "${APP_PORT}:1337"
     environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_USER: ${DATABASE_USER}
       DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USER}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_USER: ${DATABASE_USER}
+    networks:
+      - cyberhub-network

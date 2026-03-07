@@ -1,0 +1,9 @@
+include:
+  - db.yaml
+  - admin.yaml
+  - app.yaml
+  - caddy.yaml
+
+networks:
+  cyberhub-network:
+    driver: bridge
