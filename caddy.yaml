@@ -11,8 +11,3 @@ services:
       - cyberhub-network
 ```
 
-### 2. สร้างไฟล์ `Caddyfile`
-```
-cyberhub.local {
-    reverse_proxy cyberhub-web:1337
-}
