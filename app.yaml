@@ -1,6 +1,7 @@
 services: 
   CyberHub-S1_app:
     image: prawee/strapi:latest
+    container_name: CyberHub-App
     ports:
       - "${APP_PORT}:1337"
     environment:
