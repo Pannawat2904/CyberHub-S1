@@ -1,7 +1,6 @@
 include:
   - db.yaml
   - app.yaml
-  - admin.yaml
 
 services:
   cyberhub-web:
@@ -11,8 +10,8 @@ services:
       file: app.yaml
       service: CyberHub-S1_app
     networks:
-      - cyberhub-network
+      - cyberhub-s1_cyberhub-network  # ← เปลี่ยนเป็นชื่อนี้
 
 networks:
-  cyberhub-network:
-    driver: bridge
+  cyberhub-s1_cyberhub-network:
+    external: true  # ← ใช้ network ที่มีอยู่แล้ว ไม่สร้างใหม่
