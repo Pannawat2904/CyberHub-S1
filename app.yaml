@@ -1,7 +1,6 @@
 services: 
   CyberHub-S1_app:
     image: prawee/strapi
-    container_name: CyberHub-Application
     ports:
       - ${APP_PORT}:80
     environment:
