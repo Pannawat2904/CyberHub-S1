@@ -13,7 +13,3 @@ services:
       DATABASE_USER: ${DATABASE_USER}
     networks:
       - cyberhub-network
-
-networks:
-  cyberhub-network:
-    external: true
