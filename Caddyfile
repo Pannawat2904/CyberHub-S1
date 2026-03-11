@@ -1,3 +1,4 @@
-cyberhub-s1.local {
+cyberhub-s1.com {
+    tls internal
     reverse_proxy CyberHub-App:1337
 }
