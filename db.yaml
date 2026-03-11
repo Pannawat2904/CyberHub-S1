@@ -1,6 +1,6 @@
 services:
   CyberHub-S1_db:
-    image: postgres:latest
+    image: postgres:16
     container_name: CyberHub-Database
     ports:
       - "${DATABASE_PORT}:5432"
@@ -10,3 +10,5 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     networks:
       - cyberhub-network
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
