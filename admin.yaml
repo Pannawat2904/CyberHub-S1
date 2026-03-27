@@ -3,6 +3,8 @@ services:
     image: dpage/pgadmin4
     container_name: CyberHub-Admin
     restart: always
+    security_opt:
+      - no-new-privileges:true
     deploy:
       resources:
         limits:

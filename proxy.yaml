@@ -6,6 +6,8 @@ services:
     image: caddy:latest
     container_name: CyberHub-Caddy
     restart: always
+    security_opt:
+      - no-new-privileges:true
     deploy:
       resources:
         limits:
@@ -16,6 +18,8 @@ services:
       - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
     networks:
       - cyberhub-network
 

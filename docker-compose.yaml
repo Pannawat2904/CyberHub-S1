@@ -7,3 +7,7 @@ include:
 networks:
   cyberhub-network:
     driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
