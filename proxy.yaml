@@ -5,6 +5,12 @@ services:
   caddy:
     image: caddy:latest
     container_name: CyberHub-Caddy
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
     ports:
       - "80:80"
       - "443:443"
@@ -12,4 +18,3 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - cyberhub-network
-
