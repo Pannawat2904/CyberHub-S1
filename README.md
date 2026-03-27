@@ -46,14 +46,15 @@ docker compose down
 - **pgAdmin** → http://localhost:8080
 
 ## Project structure
-```
+```text
 CyberHub-S1/
 ├── docker-compose.yaml   # Main compose file
 ├── db.yaml               # PostgreSQL service
 ├── app.yaml              # Strapi service
 ├── admin.yaml            # pgAdmin service
-├── caddy.yaml            # Caddy reverse proxy
+├── proxy.yaml            # Caddy reverse proxy
 ├── Caddyfile             # Caddy configuration
+├── .dockerignore         # Docker exclusion rules
 ├── .env                  # Environment variables (ไม่ commit)
 └── env.simple            # Environment template
 ```
