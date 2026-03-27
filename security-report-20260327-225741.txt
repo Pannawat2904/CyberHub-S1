@@ -1,0 +1,48 @@
+CyberHub-S1 Security Assessment
+Date: Fri Mar 27 22:57:41 +07 2026
+Host: 192.168.2.46
+================================
+# 1. CODE — Static Analysis
+--- C-01: Credentials in .env ---
+[PASS] [CODE] C-01: .env contains no plaintext credential values
+--- C-02: Credentials in git history ---
+[FAIL] [CODE] C-02: Plaintext credentials found in git history — rotate immediately
+  Detail: +DATABASE_PASSWORD=[REDACTED]
++ADMIN_PASS=[REDACTED]
++PGADMIN_DEFAULT_PASSWORD=[REDACTED]
++PGADMIN_DEFAULT_PASSWORD=[REDACTED]
++PGADMIN_DEFAULT_PASSWORD=[REDACTED]
+--- C-03: .env tracked by git ---
+[PASS] [CODE] C-03: .env has never been tracked by git
+--- C-04: Password reuse ---
+[PASS] [CODE] C-04: DATABASE_PASSWORD and ADMIN_PASS are different
+--- C-05: Docker image provenance & version pinning ---
+[FAIL] [CODE] C-05: Image 'caddy:latest' uses :latest or has no version tag — no reproducibility/pinning
+[WARN] [CODE] C-05: Non-official image: dpage/pgadmin4 (namespace: dpage) — verify trust chain
+[FAIL] [CODE] C-05: Image 'dpage/pgadmin4' uses :latest or has no version tag — no reproducibility/pinning
+[PASS] [CODE] C-05: Image 'postgres:16' has explicit version tag
+[WARN] [CODE] C-05: Non-official image: prawee/strapi:latest (namespace: prawee) — verify trust chain
+[FAIL] [CODE] C-05: Image 'prawee/strapi:latest' uses :latest or has no version tag — no reproducibility/pinning
+--- C-06: Port exposure in committed YAML ---
+[PASS] [CODE] C-06: app.yaml (committed HEAD) does not expose Strapi port directly
+[PASS] [CODE] C-06: db.yaml (committed HEAD) does not expose PostgreSQL port directly
+--- C-07: Domain consistency ---
+[PASS] [CODE] C-07: Domain is consistent across Caddyfile and README (cyberhub-s1.com)
+--- C-08: env.simple key correctness ---
+[PASS] [CODE] C-08: No typo found in env.simple
+# 2. SERVER — Port & Network Exposure
+--- S-01: Open ports on localhost ---
+[SKIP] [SERVER] S-01: nmap not installed — install with: sudo apt install nmap
+--- S-02: pgAdmin external interface binding ---
+[WARN] [SERVER] S-02: Could not determine external IP — skipping external pgAdmin check
+[PASS] [SERVER] S-02: pgAdmin accessible on localhost (127.0.0.1:8080) as expected
+--- S-03: Direct access to internal services ---
+[PASS] [SERVER] S-03: Strapi port 1337 NOT accessible from host
+[PASS] [SERVER] S-03: Strapi APP_PORT 8040 NOT accessible from host
+[PASS] [SERVER] S-03: PostgreSQL port 5432 NOT accessible from host
+# 3. WEB — HTTP / TLS / Headers
+--- W-01: HTTP to HTTPS redirect ---
+[FAIL] [WEB] W-01: HTTP does not redirect (status 308) — content served over plain HTTP
+--- W-02: TLS certificate ---
+[WARN] [WEB] W-02: Could not connect to TLS on 443 — Caddy may not be running
+--- W-03: Security headers ---
