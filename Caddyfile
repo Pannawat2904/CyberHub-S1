@@ -1,4 +1,4 @@
 cyberhub-s1.com {
     tls internal
-    reverse_proxy CyberHub-App:1337
+    reverse_proxy 68_s1_Cyberhub-s1_App:1337
 }

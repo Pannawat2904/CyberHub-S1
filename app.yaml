@@ -4,7 +4,7 @@ include:
 services: 
   CyberHub-S1_app:
     image: prawee/strapi:latest
-    container_name: CyberHub-App
+    container_name: 68_s1_Cyberhub-s1_App
     restart: always
     security_opt:
       - no-new-privileges:true

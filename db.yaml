@@ -1,7 +1,7 @@
 services:
   CyberHub-S1_db:
     image: postgres:16
-    container_name: CyberHub-Database
+    container_name: 68_s1_Cyberhub-s1_Database
     restart: always
     security_opt:
       - no-new-privileges:true
