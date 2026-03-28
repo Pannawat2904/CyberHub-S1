@@ -1,10 +1,20 @@
 services:
-CyberHub-S1_db:
-    image: postgres:latest
-    container_name: CyberHub-Database
-    ports:
-      - ${DATABASE_PORT}:5432
+  CyberHub-S1_db:
+    image: postgres:16
+    container_name: 68_s1_Cyberhub-s1_Database
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
     environment:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_DB: ${DATABASE_NAME}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - cyberhub-network
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
