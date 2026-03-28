@@ -2,7 +2,12 @@ include:
   - db.yaml
   - app.yaml
   - proxy.yaml
+  - admin.yaml
 
 networks:
   cyberhub-network:
     driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

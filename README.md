@@ -23,7 +23,7 @@ cp env.simple .env
 
 ### 2. Add local domain to hosts file
 ```sh
-echo "127.0.0.1 cyberhub-s1.local" | sudo tee -a /etc/hosts
+echo "127.0.0.1 cyberhub-s1.com" | sudo tee -a /etc/hosts
 ```
 
 ## Running all services
@@ -41,19 +41,20 @@ docker compose down
 ```
 
 ## Accessing services
-- **Strapi** → https://cyberhub-s1.local
-- **Strapi Admin Panel** → https://cyberhub-s1.local/admin
+- **Strapi** → https://cyberhub-s1.com
+- **Strapi Admin Panel** → https://cyberhub-s1.com/admin
 - **pgAdmin** → http://localhost:8080
 
 ## Project structure
-```
+```text
 CyberHub-S1/
 ├── docker-compose.yaml   # Main compose file
 ├── db.yaml               # PostgreSQL service
 ├── app.yaml              # Strapi service
 ├── admin.yaml            # pgAdmin service
-├── caddy.yaml            # Caddy reverse proxy
+├── proxy.yaml            # Caddy reverse proxy
 ├── Caddyfile             # Caddy configuration
+├── .dockerignore         # Docker exclusion rules
 ├── .env                  # Environment variables (ไม่ commit)
 └── env.simple            # Environment template
 ```

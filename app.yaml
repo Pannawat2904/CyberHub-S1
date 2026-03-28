@@ -1,13 +1,13 @@
-include:
-  - db.yaml
-
 services: 
   CyberHub-S1_app:
     image: prawee/strapi:latest
-    container_name: CyberHub-App
+    container_name: 68_s1_Cyberhub-s1_App
     restart: always
-    ports:
-      - "${APP_PORT}:1337"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
