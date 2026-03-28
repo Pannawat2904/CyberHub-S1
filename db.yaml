@@ -4,6 +4,15 @@ services:
     container_name: CyberHub-Database
     ports:
       - "${DATABASE_PORT}:5432"
+    container_name: 68_s1_Cyberhub-s1_Database
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
     environment:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_DB: ${DATABASE_NAME}

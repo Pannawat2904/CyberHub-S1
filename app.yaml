@@ -8,6 +8,13 @@ services:
     restart: always
     ports:
       - "${APP_PORT}:1337"
+    container_name: 68_s1_Cyberhub-s1_App
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
