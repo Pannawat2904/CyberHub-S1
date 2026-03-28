@@ -1,4 +1,4 @@
-cyberhub-s1.com {
+http://165.22.102.237 {
     tls internal
     reverse_proxy 68_s1_Cyberhub-s1_App:1337
 }
